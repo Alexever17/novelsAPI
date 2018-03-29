@@ -8,43 +8,73 @@ html, body {
   background-color: #333;
   color: white;
   height: 10vh;
-  h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    height: 10vh;
+    width: auto;
+    &:hover {
+      animation-name: wiggle;
+      animation-duration: 1000ms;
+      animation-iteration-count: 1;
+      animation-timing-function: ease-in-out;
+    }
+  }
+  .homebutton {
     margin: 0;
-    line-height: 10vh;
-    text-align: center;
+    line-height: 0;
+    margin-right: 10px;
+  }
+  .holder-wrap{
+    width: 75vw;
   }
 }
 
-#sidebar {
-  width: 20%;
-  min-width: 100px;
-  padding: 0 5px;
-  background-color: lighten(#333, 10);
+#header .holder-wrap .menu-links {
+  display: block;
+  height: 5vh;
+  line-height: 5vh;
+  width: 33.3%;
   color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  a {
-    font-size: 120%;
-    font-weight: bold;
-    text-align: center;
-    color: white;
-    text-decoration: none;
-    background-color: lighten(#333, 30);
-    border: 2px solid white;
-    padding: 10px 0;
-    &:hover {
-      background-color: lighten(#333, 20)
-    }
-  }
-  .sidebar-home {
-    font-size: 140%;
+  text-decoration: none;
+  background: lighten(#333, 5);
+  text-align: center;
+  &:hover {
+    background: lighten(#333, 15);
   }
 }
+
+// #sidebar {
+//   width: 20%;
+//   min-width: 100px;
+//   padding: 0 5px;
+//   background-color: lighten(#333, 10);
+//   color: white;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-around;
+//   a {
+//     font-size: 120%;
+//     font-weight: bold;
+//     text-align: center;
+//     color: white;
+//     text-decoration: none;
+//     background-color: lighten(#333, 30);
+//     border: 2px solid white;
+//     padding: 10px 0;
+//     &:hover {
+//       background-color: lighten(#333, 20)
+//     }
+//   }
+//   .sidebar-home {
+//     font-size: 140%;
+//   }
+// }
 
 #main {
   height: 85vh;
-  width: 80%;
+  width: 100%;
   min-width: 300px;
   background-color: lighten(#333, 40);
   display: flex;
@@ -62,7 +92,7 @@ html, body {
     box-shadow: 1px 1px 10px #333;
   }
   p {
-    padding: 0 6px; 
+    padding: 0 6px;
   }
 }
 
@@ -80,4 +110,20 @@ html, body {
 .holder {
   display: flex;
   justify-content: center;
+}
+
+.holder-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@keyframes wiggle {
+  0% {transform: rotate(4deg);}
+  25% {transform: rotate(-2deg);}
+  50% {transform: rotate(2deg);}
+  75% {transform: rotate(-1deg);}
+  100% {transform: rotate(0deg);}
+
 }
