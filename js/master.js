@@ -65,31 +65,62 @@ var lib = [
   }
 ]
 
-console.log("https://cdn.novelupdates.com/images/2017/06/QHreGlFjiyOulP98.jpg");
-
+//First load of data when index.html is accessed
 function indexBuild() {
-  nnames = document.querySelectorAll(".novel .title");
-  nranking = document.querySelectorAll(".novel .ranking");
-  nholder = document.querySelectorAll(".novel .holder");
-  ndes = document.querySelectorAll(".novel .description");
+  names = document.querySelectorAll(".novel .title");
+  ranking = document.querySelectorAll(".novel .ranking");
+  holder = document.querySelectorAll(".novel .holder");
+  des = document.querySelectorAll(".novel .description");
 
   for (var i = 0; i < 3; i++) {
-    nnames[i].innerHTML = lib[i].name;
-    nranking[i].innerHTML = "Rating: "+lib[i].ranking+"/5";
-    nholder[i].innerHTML = '<a href="'+lib[i].picSource+'"><img src="'+lib[i].picSource+'" alt="'+lib[i].name+' Cover'+'" class="cover" width="230px" height="329px"></a>';
-    ndes[i].innerHTML = "<b>Description: </b><br>" + lib[i].description;
+    names[i].innerHTML = lib[i].name;
+    ranking[i].innerHTML = "Rating: "+lib[i].ranking+"/5";
+    holder[i].innerHTML = '<a href="'+lib[i].picSource+'"><img src="'+lib[i].picSource+'" alt="'+lib[i].name+' Cover'+'" class="cover" width="230px" height="329px"></a>';
+    des[i].innerHTML = "<b>Description: </b><br>" + lib[i].description;
   }
 }
 
+//first load of data for top.html when its accessed
 function topBuild() {
-  nnames = document.querySelectorAll(".line .title");
-  nranking = document.querySelectorAll(".line .ranking");
-  nholder = document.querySelectorAll(".line .holder");
-  ndes = document.querySelectorAll(".line .description");
+  thumbnail = document.querySelectorAll(".thumbnail");
 
   for (var i = 0; i < 8; i++) {
-    nnames[i].innerHTML = lib[i].name;
-    nranking[i].innerHTML = "Rating: "+lib[i].ranking+"/5";
-    nholder[i].innerHTML = '<a href="'+lib[i].picSource+'"><img src="'+lib[i].picSource+'" alt="'+lib[i].name+' Cover'+'" class="cover" width="115px" height="165px"></a>';
+    thumbnail[i].innerHTML = '<h4 class="info" onclick="modal(' + lib[i].id + ')">i</h4><div class="holder"></div><h3 class="title"></h3><h4 class="ranking"></h4>'
   }
+
+  names = document.querySelectorAll(".line .title");
+  ranking = document.querySelectorAll(".line .ranking");
+  holder = document.querySelectorAll(".line .holder");
+  des = document.querySelectorAll(".line .description");
+
+  for (var i = 0; i < 8; i++) {
+    names[i].innerHTML = lib[i].name;
+    ranking[i].innerHTML = "Rating: "+lib[i].ranking+"/5";
+    holder[i].innerHTML = '<a href="'+lib[i].picSource+'"><img src="'+lib[i].picSource+'" alt="'+lib[i].name+' Cover'+'" class="cover" width="115px" height="165px"></a>';
+  }
+}
+
+//takes as variable the id for the lib entry and inputs the data into the modal which is first hidden.
+function modal(i) {
+  document.getElementById('modalTop').style.display = "block";
+
+  modal = document.querySelector(".modalContent");
+  modal.innerHTML = '<h4 id="close" class="close" onclick="closeModal()">x</h4> <h3 class="title"></h3> <h4 class="ranking"></h4> <div class="holder"></div> <p class="description"></p>'
+
+  names = document.querySelector(".modalContent .title");
+  ranking = document.querySelector(".modalContent .ranking");
+  holder = document.querySelector(".modalContent .holder");
+  des = document.querySelector(".modalContent .description");
+
+  names.innerHTML = lib[i].name;
+  ranking.innerHTML = "Rating: "+lib[i].ranking+"/5";
+  holder.innerHTML = '<a href="'+lib[i].picSource+'"><img src="'+lib[i].picSource+'" alt="'+lib[i].name+' Cover'+'" class="cover" width="230px" height="329px"></a>';
+  des.innerHTML = "<b>Description: </b><br>" + lib[i].description;
+
+}
+
+//closes the modal
+function closeModal() {
+  document.getElementById('modalTop').style.display = "none";
+  document.getElementById('modalTop').innerHTML = "";
 }
