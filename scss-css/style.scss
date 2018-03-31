@@ -24,7 +24,7 @@ html, body {
   .homebutton {
     margin: 0;
     line-height: 0;
-    margin-right: 10px;
+    margin-right: 20px;
   }
   .holder-wrap{
     width: 75vw;
@@ -44,33 +44,6 @@ html, body {
     background: lighten(#333, 15);
   }
 }
-
-// #sidebar {
-//   width: 20%;
-//   min-width: 100px;
-//   padding: 0 5px;
-//   background-color: lighten(#333, 10);
-//   color: white;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-around;
-//   a {
-//     font-size: 120%;
-//     font-weight: bold;
-//     text-align: center;
-//     color: white;
-//     text-decoration: none;
-//     background-color: lighten(#333, 30);
-//     border: 2px solid white;
-//     padding: 10px 0;
-//     &:hover {
-//       background-color: lighten(#333, 20)
-//     }
-//   }
-//   .sidebar-home {
-//     font-size: 140%;
-//   }
-// }
 
 #main {
   height: 85vh;
