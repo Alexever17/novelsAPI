@@ -55,7 +55,18 @@ html, body {
   background: #595959;
 }
 
-#main {
+#footer {
+  background: #333;
+  color: white;
+  height: 5vh;
+  text-align: center;
+}
+#footer a {
+  color: white;
+  line-height: 5vh;
+}
+
+.index {
   height: 85vh;
   width: 100%;
   min-width: 300px;
@@ -67,7 +78,7 @@ html, body {
       -ms-flex-pack: center;
           justify-content: center;
 }
-#main .novel {
+.index .novel {
   overflow-y: scroll;
   height: 81vh;
   width: 31%;
@@ -77,22 +88,47 @@ html, body {
   -webkit-box-shadow: 1px 1px 10px #333;
           box-shadow: 1px 1px 10px #333;
 }
-#main .novel .ranking, #main .novel .title {
+.index .novel .ranking, .index .novel .title {
   text-align: center;
 }
-#main p {
+.index p {
   padding: 0 6px;
 }
 
-#footer {
-  background: #333;
-  color: white;
-  height: 5vh;
-  text-align: center;
+.top {
+  height: 85vh;
+  width: 100%;
+  min-width: 300px;
+  background-color: #999999;
 }
-#footer a {
-  color: white;
-  line-height: 5vh;
+.top .line {
+  height: 40vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 2vh 0 0 0;
+}
+.top #secondLine {
+  padding: 1vh 0 0 0;
+}
+.top .thumbnail {
+  overflow-y: auto;
+  width: 20%;
+  padding: 25px 5px 10px 5px;
+  text-align: center;
+  background-color: white;
+  color: black;
+  -webkit-box-shadow: 1px 1px 10px #333;
+          box-shadow: 1px 1px 10px #333;
+}
+.top .thumbnail h3 {
+  margin: 5px 0 0 0;
+}
+.top .thumbnail h4 {
+  margin: 0;
+  font-weight: normal;
 }
 
 .holder {

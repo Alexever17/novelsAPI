@@ -45,7 +45,18 @@ html, body {
   }
 }
 
-#main {
+#footer {
+  background: #333;
+  color: white;
+  height: 5vh;
+  text-align: center;
+  a {
+    color: white;
+    line-height: 5vh;
+  }
+}
+
+.index {
   height: 85vh;
   width: 100%;
   min-width: 300px;
@@ -69,14 +80,35 @@ html, body {
   }
 }
 
-#footer {
-  background: #333;
-  color: white;
-  height: 5vh;
-  text-align: center;
-  a {
-    color: white;
-    line-height: 5vh;
+.top {
+  height: 85vh;
+  width: 100%;
+  min-width: 300px;
+  background-color: lighten(#333, 40);
+  .line {
+    height: 40vh;
+    display: flex;
+    justify-content: space-around;
+    padding: 2vh 0 0 0;
+  }
+  #secondLine {
+    padding: 1vh 0 0 0;
+  }
+  .thumbnail {
+    overflow-y: auto;
+    width: 20%;
+    padding: 25px 5px 10px 5px;
+    text-align: center;
+    background-color: white;
+    color: black;
+    box-shadow: 1px 1px 10px #333;
+    h3 {
+      margin: 5px 0 0 0;
+    }
+    h4 {
+      margin: 0;
+      font-weight: normal;
+    }
   }
 }
 
