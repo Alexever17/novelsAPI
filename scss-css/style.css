@@ -143,8 +143,6 @@ html, body {
 }
 
 .modal {
-  display: none;
-  /* Hidden by default */
   position: fixed;
   /* Stay in place */
   z-index: 1;
@@ -153,7 +151,7 @@ html, body {
   /* Location of the box */
   left: 0;
   top: 0;
-  width: 100%;
+  width: 60%;
   /* Full width */
   height: 100%;
   /* Full height */
@@ -169,7 +167,7 @@ html, body {
   background-color: white;
   margin: auto;
   padding: 20px;
-  width: 80%;
+  width: 50%;
   height: 80%;
   overflow: auto;
 }

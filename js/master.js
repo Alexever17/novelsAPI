@@ -102,7 +102,7 @@ function topBuild() {
 
 //takes as variable the id for the lib entry and inputs the data into the modal which is first hidden.
 function modal(i) {
-  document.getElementById('modalTop').style.display = "block";
+  // document.getElementById('modalTop').style.display = "block";
 
   modal = document.querySelector(".modalContent");
   modal.innerHTML = '<h4 id="close" class="close" onclick="closeModal()">x</h4> <h3 class="title"></h3> <h4 class="ranking"></h4> <div class="holder"></div> <p class="description"></p>'
@@ -121,6 +121,6 @@ function modal(i) {
 
 //closes the modal
 function closeModal() {
-  document.getElementById('modalTop').style.display = "none";
-  document.getElementById('modalTop').innerHTML = "";
+  // document.getElementById('modalTop').style.display = "none";
+  document.querySelector(".modalContent").innerHTML = "";
 }
