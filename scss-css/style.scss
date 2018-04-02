@@ -11,7 +11,7 @@ html, body {
   color: white;
   height: 10vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   img {
     height: 10vh;
@@ -26,7 +26,6 @@ html, body {
   .homebutton {
     margin: 0;
     line-height: 0;
-    margin-right: 20px;
   }
   .holder-wrap{
     width: 75vw;
@@ -47,6 +46,13 @@ html, body {
   }
 }
 
+#main {
+  height: 85vh;
+  width: 100%;
+  min-width: 300px;
+  background-color: lighten(#333, 40);
+}
+
 #footer {
   background: #333;
   color: white;
@@ -61,10 +67,6 @@ html, body {
 //---- MAIN FRONT PAGE
 
 .index {
-  height: 85vh;
-  width: 100%;
-  min-width: 300px;
-  background-color: lighten(#333, 40);
   display: flex;
   justify-content: center;
   .novel {
@@ -87,10 +89,6 @@ html, body {
 //---- THE PAGE WITH THE TOP 8
 
 .top {
-  height: 85vh;
-  width: 100%;
-  min-width: 300px;
-  background-color: lighten(#333, 40);
   .line {
     height: 40vh;
     display: flex;
@@ -130,13 +128,13 @@ html, body {
 }
 
 .modal {
-    // display: none; /* Hidden by default */
+    display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 50px; /* Location of the box */
     left: 0;
     top: 0;
-    width: 60%; /* Full width */
+    width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: hidden; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */

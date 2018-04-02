@@ -11,9 +11,9 @@ html, body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -35,7 +35,6 @@ html, body {
 #header .homebutton {
   margin: 0;
   line-height: 0;
-  margin-right: 20px;
 }
 #header .holder-wrap {
   width: 75vw;
@@ -55,6 +54,13 @@ html, body {
   background: #595959;
 }
 
+#main {
+  height: 85vh;
+  width: 100%;
+  min-width: 300px;
+  background-color: #999999;
+}
+
 #footer {
   background: #333;
   color: white;
@@ -67,10 +73,6 @@ html, body {
 }
 
 .index {
-  height: 85vh;
-  width: 100%;
-  min-width: 300px;
-  background-color: #999999;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -95,12 +97,6 @@ html, body {
   padding: 0 6px;
 }
 
-.top {
-  height: 85vh;
-  width: 100%;
-  min-width: 300px;
-  background-color: #999999;
-}
 .top .line {
   height: 40vh;
   display: -webkit-box;
@@ -143,6 +139,8 @@ html, body {
 }
 
 .modal {
+  display: none;
+  /* Hidden by default */
   position: fixed;
   /* Stay in place */
   z-index: 1;
@@ -151,7 +149,7 @@ html, body {
   /* Location of the box */
   left: 0;
   top: 0;
-  width: 60%;
+  width: 100%;
   /* Full width */
   height: 100%;
   /* Full height */
