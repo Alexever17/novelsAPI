@@ -118,7 +118,7 @@ function topBuild() {
   var thumbnail = document.querySelectorAll(".thumbnail");
 
   for (var i = 0; i < 8; i++) {
-    thumbnail[i].innerHTML = '<h4 class="info" onclick="modal(' + lib[i].id + ')">i</h4><div class="holder"></div><h3 class="title"></h3><h4 class="ranking"></h4>'
+    thumbnail[i].innerHTML = '<h4 class="info" onclick="openModal(' + lib[i].id + ')">i</h4><div class="holder"></div><h3 class="title"></h3><h4 class="ranking"></h4>'
   }
 
   var names = document.querySelectorAll(".line .title");
@@ -135,7 +135,7 @@ function topBuild() {
 }
 
 //takes as variable the id for the lib entry and inputs the data into the modal which is first hidden.
-function modal(i) {
+function openModal(i) {
   document.getElementById('modalTop').style.display = "block";
 
   var modal = document.querySelector(".modalContent");
