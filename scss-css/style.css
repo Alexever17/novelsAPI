@@ -35,6 +35,7 @@ html, body {
 #header .homebutton {
   margin: 0;
   line-height: 0;
+  padding-left: 20px;
 }
 #header .holder-wrap {
   width: 75vw;
@@ -95,6 +96,10 @@ html, body {
 }
 .index p {
   padding: 0 6px;
+}
+.index .linkparent .link {
+  display: block;
+  text-align: center;
 }
 
 .top .line {
@@ -168,6 +173,12 @@ html, body {
   width: 50%;
   height: 80%;
   overflow: auto;
+}
+.modalContent .link {
+  display: block;
+}
+.modalContent .title, .modalContent .link, .modalContent .ranking {
+  text-align: center;
 }
 
 /* The Close Button */

@@ -1,6 +1,7 @@
 var lib = [
   {
     id: 0,
+    origin: 'ch',
     name: 'Library of Heaven’s Path',
     ranking: 5,
     url: 'https://www.novelupdates.com/series/library-of-heavens-path/',
@@ -9,6 +10,7 @@ var lib = [
   },
   {
     id: 1,
+    origin: 'kr',
     name: 'The Book Eating Magician',
     ranking: 5,
     url: 'https://www.novelupdates.com/series/the-book-eating-magician/',
@@ -17,6 +19,7 @@ var lib = [
   },
   {
     id: 2,
+    origin: 'ch',
     name: 'Monster Paradise',
     ranking: 5,
     url: 'https://www.novelupdates.com/series/monster-paradise/',
@@ -25,6 +28,7 @@ var lib = [
   },
   {
     id: 3,
+    origin: 'ch',
     name: 'Crossing to the Future, it’s Not Easy to Be a Man',
     ranking: 5,
     url: 'https://www.novelupdates.com/series/crossing-to-the-future-its-not-easy-to-be-a-man/',
@@ -33,6 +37,7 @@ var lib = [
   },
   {
     id: 4,
+    origin: 'kr',
     name: 'Dungeon Defense',
     ranking: 5,
     url: 'https://www.novelupdates.com/series/dungeon-defense/',
@@ -41,6 +46,7 @@ var lib = [
   },
   {
     id: 5,
+    origin: 'jp',
     name: 'Arifureta Shokugyou de Sekai Saikyou',
     ranking: 5,
     url: 'https://www.novelupdates.com/series/arifureta-shokugyou-de-sekai-saikyou-ln/',
@@ -49,6 +55,7 @@ var lib = [
   },
   {
     id: 6,
+    origin: 'kr',
     name: 'Praise the Orc!',
     ranking: 5,
     url: 'https://www.novelupdates.com/series/praise-the-orc/',
@@ -57,6 +64,7 @@ var lib = [
   },
   {
     id: 7,
+    origin: 'jp',
     name: 'Dungeon ni Deai o Motomeru no wa Machigatte Iru Darou ka',
     ranking: 5,
     url: 'https://www.novelupdates.com/series/dungeon-ni-deai-o-motomeru-no-wa-machigatte-iru-darou-ka/',
@@ -65,6 +73,7 @@ var lib = [
   },
   {
     id: 8,
+    origin: 'kr',
     name: 'Seoul Station’s Necromancer',
     ranking: 5,
     url: 'https://www.novelupdates.com/series/seoul-stations-necromancer/',
@@ -73,6 +82,7 @@ var lib = [
   },
   {
     id: 9,
+    origin: '',
     name: '',
     ranking: 0,
     url: '',
@@ -87,11 +97,18 @@ function indexBuild() {
   var ranking = document.querySelectorAll(".novel .ranking");
   var holder = document.querySelectorAll(".novel .holder");
   var des = document.querySelectorAll(".novel .description");
+  var parents = document.querySelectorAll(".novel");
 
   for (var i = 0; i < 3; i++) {
     names[i].innerHTML = lib[i].name;
     ranking[i].innerHTML = "Rating: "+lib[i].ranking+"/5";
     holder[i].innerHTML = '<a href="'+lib[i].picSource+'"><img src="'+lib[i].picSource+'" alt="'+lib[i].name+' Cover'+'" class="cover" width="230px" height="329px"></a>';
+
+    var linkparent = document.createElement("div");
+    linkparent.setAttribute("class", "linkparent");
+    linkparent.innerHTML = '<a href="'+lib[i].url+'" class="link">More Information here</a>';
+    parents[i].insertBefore(linkparent,des[i]);
+
     des[i].innerHTML = "<b>Description: </b><br>" + lib[i].description;
   }
 }
@@ -110,9 +127,10 @@ function topBuild() {
   var des = document.querySelectorAll(".line .description");
 
   for (var i = 0; i < 8; i++) {
-    names[i].innerHTML = lib[i].name;
+    var insert = under40CharacterCheck(i);
+    names[i].innerHTML = insert;
     ranking[i].innerHTML = "Rating: "+lib[i].ranking+"/5";
-    holder[i].innerHTML = '<a href="'+lib[i].picSource+'"><img src="'+lib[i].picSource+'" alt="'+lib[i].name+' Cover'+'" class="cover" width="115px" height="165px"></a>';
+    holder[i].innerHTML = '<a href="'+lib[i].picSource+'"><img src="'+lib[i].picSource+'" alt="'+lib[i].name+' Cover'+'" class="cover" width="126px" height="181px"></a>';
   }
 }
 
@@ -131,6 +149,12 @@ function modal(i) {
   names.innerHTML = lib[i].name;
   ranking.innerHTML = "Rating: "+lib[i].ranking+"/5";
   holder.innerHTML = '<a href="'+lib[i].picSource+'"><img src="'+lib[i].picSource+'" alt="'+lib[i].name+' Cover'+'" class="cover" width="230px" height="329px"></a>';
+
+  var linkparent = document.createElement("div");
+  linkparent.setAttribute("class", "linkparent");
+  linkparent.innerHTML = '<a href="'+lib[i].url+'" class="link">More Information here</a>';
+  modal.insertBefore(linkparent,des);
+
   des.innerHTML = "<b>Description: </b><br>" + lib[i].description;
 
 }
@@ -141,6 +165,12 @@ function closeModal() {
   document.querySelector(".modalContent").innerHTML = "";
 }
 
-function under40CharacterCheck() {
-
+function under40CharacterCheck(i) {
+  var text = '';
+  if (lib[i].name.length > 40) {
+    text = lib[i].name.slice(0, 38) + "...";
+  } else {
+    text = lib[i].name;
+  }
+  return text
 }

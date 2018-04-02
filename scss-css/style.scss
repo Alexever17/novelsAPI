@@ -26,6 +26,7 @@ html, body {
   .homebutton {
     margin: 0;
     line-height: 0;
+    padding-left: 20px;
   }
   .holder-wrap{
     width: 75vw;
@@ -84,6 +85,10 @@ html, body {
   p {
     padding: 0 6px;
   }
+  .linkparent .link {
+    display: block;
+    text-align: center;
+  }
 }
 
 //---- THE PAGE WITH THE TOP 8
@@ -127,6 +132,8 @@ html, body {
   }
 }
 
+// TOP 8 PAGE --- MODAL RULES
+
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -148,6 +155,12 @@ html, body {
     width: 50%;
     height: 80%;
     overflow: auto;
+    .link {
+      display: block;
+    }
+    .title, .link, .ranking {
+      text-align: center;
+    }
 }
 
 /* The Close Button */
