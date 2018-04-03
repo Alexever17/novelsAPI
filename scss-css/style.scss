@@ -97,7 +97,7 @@ html, body {
   .line {
     height: 40vh;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     padding: 2vh 0 0 0;
   }
   #secondLine {
@@ -105,18 +105,15 @@ html, body {
   }
   .thumbnail {
     overflow-y: auto;
-    width: 20%;
+    margin: 0 20px 0 20px;
+    width: 19%;
     padding: 0px 5px 10px 5px;
     text-align: center;
     background-color: white;
     color: black;
     box-shadow: 1px 1px 10px #333;
-    h3 {
-      margin: 5px 0 0 0;
-    }
-    h4 {
+    .title {
       margin: 0;
-      font-weight: normal;
     }
   }
   .info {

@@ -118,7 +118,7 @@ function topBuild() {
   var thumbnail = document.querySelectorAll(".thumbnail");
 
   for (var i = 0; i < 8; i++) {
-    thumbnail[i].innerHTML = '<h4 class="info" onclick="openModal(' + lib[i].id + ')">i</h4><div class="holder"></div><h3 class="title"></h3><h4 class="ranking"></h4>'
+    thumbnail[i].innerHTML = '<h4 class="info" onclick="openModal(' + lib[i].id + ')">i</h4><div class="holder"></div><h3 class="title"></h3>';
   }
 
   var names = document.querySelectorAll(".line .title");
@@ -126,11 +126,11 @@ function topBuild() {
   var holder = document.querySelectorAll(".line .holder");
   var des = document.querySelectorAll(".line .description");
 
-  for (var i = 0; i < 8; i++) {
-    var insert = under40CharacterCheck(i);
-    names[i].innerHTML = insert;
-    ranking[i].innerHTML = "Rating: "+lib[i].ranking+"/5";
-    holder[i].innerHTML = '<a href="'+lib[i].picSource+'"><img src="'+lib[i].picSource+'" alt="'+lib[i].name+' Cover'+'" class="cover" width="126px" height="181px"></a>';
+  for (var j = 0; j < 8; j++) {
+    var characterLimiter = 35;
+    var insert = underXXCharacterCheck(j, 35);
+    names[j].innerHTML = insert;
+    holder[j].innerHTML = '<a href="'+lib[j].picSource+'"><img src="'+lib[j].picSource+'" alt="'+lib[j].name+' Cover'+'" class="cover" width="146px" height="210px"></a>';
   }
 }
 
@@ -139,7 +139,7 @@ function openModal(i) {
   document.getElementById('modalTop').style.display = "block";
 
   var modal = document.querySelector(".modalContent");
-  modal.innerHTML = '<h4 id="close" class="close" onclick="closeModal()">x</h4> <h3 class="title"></h3> <h4 class="ranking"></h4> <div class="holder"></div> <p class="description"></p>'
+  modal.innerHTML = '<h4 id="close" class="close" onclick="closeModal()">x</h4> <h3 class="title"></h3> <h4 class="ranking"></h4> <div class="holder"></div> <p class="description"></p>';
 
   var names = document.querySelector(".modalContent .title");
   var ranking = document.querySelector(".modalContent .ranking");
@@ -165,12 +165,12 @@ function closeModal() {
   document.querySelector(".modalContent").innerHTML = "";
 }
 
-function under40CharacterCheck(i) {
+function underXXCharacterCheck(i, limiter) {
   var text = '';
-  if (lib[i].name.length > 40) {
-    text = lib[i].name.slice(0, 38) + "...";
+  if (lib[i].name.length >= limiter) {
+    text = lib[i].name.slice(0, limiter) + "...";
   } else {
     text = lib[i].name;
   }
-  return text
+  return text;
 }

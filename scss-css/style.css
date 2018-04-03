@@ -107,8 +107,9 @@ html, body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 2vh 0 0 0;
 }
 .top #secondLine {
@@ -116,7 +117,8 @@ html, body {
 }
 .top .thumbnail {
   overflow-y: auto;
-  width: 20%;
+  margin: 0 20px 0 20px;
+  width: 19%;
   padding: 0px 5px 10px 5px;
   text-align: center;
   background-color: white;
@@ -124,12 +126,8 @@ html, body {
   -webkit-box-shadow: 1px 1px 10px #333;
           box-shadow: 1px 1px 10px #333;
 }
-.top .thumbnail h3 {
-  margin: 5px 0 0 0;
-}
-.top .thumbnail h4 {
+.top .thumbnail .title {
   margin: 0;
-  font-weight: normal;
 }
 .top .info {
   position: relative;
