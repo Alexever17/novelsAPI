@@ -88,8 +88,7 @@ var lib = [
     url: '',
     picSource: '',
     description: ''
-  }
-]
+  }];
 
 //First load of data when index.html is accessed
 function indexBuild() {
@@ -132,6 +131,22 @@ function topBuild() {
     names[j].innerHTML = insert;
     holder[j].innerHTML = '<a href="'+lib[j].picSource+'"><img src="'+lib[j].picSource+'" alt="'+lib[j].name+' Cover'+'" class="cover" width="146px" height="210px"></a>';
   }
+}
+
+//first load of data for full-list.html when its accessed
+function fullBuild() {
+  var acc = document.getElementsByClassName("accordion");
+  for ( var i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.getElementsByClassName('panel')[0];
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
+}
 }
 
 //takes as variable the id for the lib entry and inputs the data into the modal which is first hidden.

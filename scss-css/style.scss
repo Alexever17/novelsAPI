@@ -175,6 +175,49 @@ html, body {
     cursor: pointer;
 }
 
+//FULL LIST HTML RULES
+
+.full-list {
+  overflow-y: auto;
+  .accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 70%;
+    margin: 0 auto 0 auto;
+    border: none;
+    text-align: left;
+    outline: none;
+    transition: 0.4s;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    .holder {
+      min-width: 20%;
+      align-items: center;
+    }
+    .link {
+      margin-left: auto;
+    }
+  }
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+  .panel {
+    margin: 20px 0 0 0;
+    width: 100%;
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+  }
+  * {
+    margin-right: 20px;
+  }
+}
+
 //----- ACROSS USABLE RULES
 
 .holder {

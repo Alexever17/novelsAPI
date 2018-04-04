@@ -194,6 +194,57 @@ html, body {
   cursor: pointer;
 }
 
+.full-list {
+  overflow-y: auto;
+}
+.full-list .accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 10px;
+  width: 70%;
+  margin: 0 auto 0 auto;
+  border: none;
+  text-align: left;
+  outline: none;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.full-list .accordion .holder {
+  min-width: 20%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.full-list .accordion .link {
+  margin-left: auto;
+}
+.full-list .active, .full-list .accordion:hover {
+  background-color: #ccc;
+}
+.full-list .panel {
+  margin: 20px 0 0 0;
+  width: 100%;
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+.full-list * {
+  margin-right: 20px;
+}
+
 .holder {
   display: -webkit-box;
   display: -ms-flexbox;
