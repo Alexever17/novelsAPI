@@ -146,7 +146,27 @@ function fullBuild() {
             panel.style.display = "block";
         }
     });
-}
+  }
+  console.log(lib.length);
+  for (var j = 0; j < lib.length; j++) {
+
+  }
+
+  // <button class="accordion">
+  //   <div class="id-picture">
+  //     <h3 class="list-number">1</h3>
+  //     <a href="https://cdn-cms.f-static.com/uploads/430320/800_59f7da2df39d9.jpg">
+  //       <img src="https://cdn-cms.f-static.com/uploads/430320/800_59f7da2df39d9.jpg" width="42px" height="60px" />
+  //     </a>
+  //   </div>
+  //   <div class="full-list-titles">
+  //     <h3 class="title">The Book Eating Magician</h3>
+  //   </div>
+  //   <div class="full-list-rankings">
+  //     <h4 class="ranking">5/5</h4>
+  //   </div>
+  //   <div class="panel"><a href="https://www.novelupdates.com/series/the-book-eating-magician/" class="link">More Information</a><p>Lorem</p></div>
+  // </button>
 }
 
 //takes as variable the id for the lib entry and inputs the data into the modal which is first hidden.

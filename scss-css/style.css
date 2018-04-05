@@ -198,14 +198,14 @@ html, body {
   overflow-y: auto;
 }
 .full-list .accordion {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 10px;
-  width: 70%;
+  background-color: white;
+  color: #333;
+  width: 70vw;
   margin: 0 auto 0 auto;
-  border: none;
-  text-align: left;
+  padding: 3px 0;
+  border-width: 1px 0px 1px 0px;
+  border-top: solid rgba(0, 0, 0, 0.1);
+  border-bottom: solid rgba(0, 0, 0, 0.1);
   outline: none;
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -220,29 +220,75 @@ html, body {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  cursor: pointer;
 }
-.full-list .accordion .holder {
-  min-width: 20%;
+.full-list .accordion a {
+  margin: 0;
+  padding: 0;
+}
+.full-list .accordion a img {
+  display: block;
+}
+.full-list .accordion .ranking {
+  margin-left: auto;
+}
+.full-list .accordion .title {
+  font-size: 130%;
+  padding-left: 2vh;
+}
+.full-list .accordion .id-picture {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 10.2vw;
 }
-.full-list .accordion .link {
-  margin-left: auto;
+.full-list .accordion .full-list-rankings {
+  width: 9.8vw;
+}
+.full-list .accordion .full-list-titles {
+  width: 50vw;
 }
 .full-list .active, .full-list .accordion:hover {
   background-color: #ccc;
 }
 .full-list .panel {
-  margin: 20px 0 0 0;
+  margin: 20px 0 20px 0;
   width: 100%;
-  padding: 0 18px;
+  padding: 20px;
   display: none;
   background-color: white;
+  text-align: left;
   overflow: hidden;
 }
-.full-list * {
-  margin-right: 20px;
+.full-list .listHeader {
+  cursor: default;
+}
+.full-list .listHeader:hover {
+  background-color: white;
+}
+.full-list .listHeader .title {
+  cursor: pointer;
+  height: 100%;
+  width: 46.7vw;
+  margin: 0;
+  padding: 2vh;
+  border-left: 2px solid rgba(0, 0, 0, 0.1);
+}
+.full-list .listHeader .title:last-child {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 10vw;
+}
+.full-list .listHeader .title:first-child {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 0;
+  width: 10vw;
 }
 
 .holder {

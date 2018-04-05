@@ -1,4 +1,5 @@
 $prim: #b46cff;
+$shadowBorder: rgba(0,0,0, 0.1);
 
 html, body {
   margin: 0;
@@ -180,41 +181,85 @@ html, body {
 .full-list {
   overflow-y: auto;
   .accordion {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 10px;
-    width: 70%;
+    background-color: white;
+    color: #333;
+    width: 70vw;
     margin: 0 auto 0 auto;
-    border: none;
-    text-align: left;
+    padding: 3px 0;
+    border-width: 1px 0px 1px 0px;
+    border-top: solid darken($shadowBorder, 10%);
+    border-bottom: solid darken($shadowBorder, 10%);
     outline: none;
     transition: 0.4s;
+
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
-    .holder {
-      min-width: 20%;
-      align-items: center;
+
+    cursor: pointer;
+
+    a {
+      margin: 0;
+      padding: 0;
+      img {
+        display: block;
+      }
     }
-    .link {
+    .ranking {
       margin-left: auto;
+    }
+    .title {
+      font-size: 130%;
+      padding-left: 2vh;
+    }
+    .id-picture {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 10.2vw;
+    }
+    .full-list-rankings {
+      width: 9.8vw;
+    }
+    .full-list-titles {
+      width: 50vw;
     }
   }
   .active, .accordion:hover {
     background-color: #ccc;
   }
   .panel {
-    margin: 20px 0 0 0;
+    margin: 20px 0 20px 0;
     width: 100%;
-    padding: 0 18px;
+    padding: 20px;
     display: none;
     background-color: white;
+    text-align: left;
     overflow: hidden;
   }
-  * {
-    margin-right: 20px;
+  .listHeader {
+    cursor: default;
+    &:hover {
+      background-color: white;
+    }
+    .title {
+      cursor: pointer;
+      height: 100%;
+      width: 46.7vw;
+      margin: 0;
+      padding: 2vh;
+      border-left: 2px solid $shadowBorder;
+      &:last-child {
+        box-sizing: border-box;
+        width: 10vw;
+      }
+      &:first-child{
+        box-sizing: border-box;
+        border: 0;
+        width: 10vw;
+      }
+    }
   }
 }
 
