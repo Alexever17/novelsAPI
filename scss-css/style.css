@@ -40,7 +40,6 @@ html, body {
 #header .holder-wrap {
   width: 75vw;
 }
-
 #header .holder-wrap .menu-links {
   display: block;
   height: 5vh;
@@ -141,6 +140,115 @@ html, body {
   cursor: pointer;
 }
 
+.full-list {
+  overflow-y: auto;
+}
+.full-list .accordion {
+  background-color: white;
+  color: #333;
+  width: 70vw;
+  margin: 0 auto 0 auto;
+  padding: 3px 0;
+  border-width: 1px 0px 1px 0px;
+  border-top: solid rgba(0, 0, 0, 0.1);
+  border-bottom: solid rgba(0, 0, 0, 0.1);
+  outline: none;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  font-size: 105%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  cursor: pointer;
+  -webkit-user-select: text;
+     -moz-user-select: text;
+      -ms-user-select: text;
+          user-select: text;
+}
+.full-list .accordion a {
+  margin: 0;
+  padding: 0;
+}
+.full-list .accordion a img {
+  display: block;
+}
+.full-list .accordion .ranking {
+  margin-left: auto;
+  line-height: 0;
+}
+.full-list .accordion .title {
+  cursor: text;
+  padding-left: 2vh;
+  display: inline;
+}
+.full-list .accordion .id-picture {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 10.2vw;
+}
+.full-list .accordion .full-list-rankings {
+  width: 9.8vw;
+}
+.full-list .accordion .full-list-titles {
+  text-align: left;
+  width: 50vw;
+}
+.full-list .active, .full-list .accordion:hover {
+  background-color: #ccc;
+}
+.full-list .panel {
+  margin: 20px 0 20px 0;
+  width: 100%;
+  padding: 20px;
+  display: none;
+  background-color: white;
+  text-align: left;
+  overflow: hidden;
+  font-size: 110%;
+}
+.full-list .listHeader {
+  cursor: default;
+}
+.full-list .listHeader:hover {
+  background-color: white;
+}
+.full-list .listHeader .title {
+  text-align: left;
+  cursor: pointer;
+  height: 100%;
+  width: 46.7vw;
+  margin: 0;
+  padding: 2vh;
+  border-left: 2px solid rgba(0, 0, 0, 0.1);
+}
+.full-list .listHeader .title:last-child {
+  margin-left: auto;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 10vw;
+}
+.full-list .listHeader .title:first-child {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 0;
+  width: 10vw;
+}
+
 .modal {
   display: none;
   /* Hidden by default */
@@ -179,7 +287,7 @@ html, body {
   text-align: center;
 }
 
-/* The Close Button */
+/* The Modal Close Button */
 .close {
   color: #333;
   border: 1px solid #333;
@@ -192,103 +300,6 @@ html, body {
 .close:focus {
   text-decoration: none;
   cursor: pointer;
-}
-
-.full-list {
-  overflow-y: auto;
-}
-.full-list .accordion {
-  background-color: white;
-  color: #333;
-  width: 70vw;
-  margin: 0 auto 0 auto;
-  padding: 3px 0;
-  border-width: 1px 0px 1px 0px;
-  border-top: solid rgba(0, 0, 0, 0.1);
-  border-bottom: solid rgba(0, 0, 0, 0.1);
-  outline: none;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  cursor: pointer;
-}
-.full-list .accordion a {
-  margin: 0;
-  padding: 0;
-}
-.full-list .accordion a img {
-  display: block;
-}
-.full-list .accordion .ranking {
-  margin-left: auto;
-}
-.full-list .accordion .title {
-  font-size: 130%;
-  padding-left: 2vh;
-}
-.full-list .accordion .id-picture {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 10.2vw;
-}
-.full-list .accordion .full-list-rankings {
-  width: 9.8vw;
-}
-.full-list .accordion .full-list-titles {
-  width: 50vw;
-}
-.full-list .active, .full-list .accordion:hover {
-  background-color: #ccc;
-}
-.full-list .panel {
-  margin: 20px 0 20px 0;
-  width: 100%;
-  padding: 20px;
-  display: none;
-  background-color: white;
-  text-align: left;
-  overflow: hidden;
-}
-.full-list .listHeader {
-  cursor: default;
-}
-.full-list .listHeader:hover {
-  background-color: white;
-}
-.full-list .listHeader .title {
-  cursor: pointer;
-  height: 100%;
-  width: 46.7vw;
-  margin: 0;
-  padding: 2vh;
-  border-left: 2px solid rgba(0, 0, 0, 0.1);
-}
-.full-list .listHeader .title:last-child {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  width: 10vw;
-}
-.full-list .listHeader .title:first-child {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border: 0;
-  width: 10vw;
 }
 
 .holder {

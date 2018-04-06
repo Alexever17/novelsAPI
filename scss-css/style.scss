@@ -32,19 +32,19 @@ html, body {
   .holder-wrap{
     width: 75vw;
   }
-}
 
-#header .holder-wrap .menu-links {
-  display: block;
-  height: 5vh;
-  line-height: 5vh;
-  width: 33.3%;
-  color: white;
-  text-decoration: none;
-  background: lighten(#333, 5);
-  text-align: center;
-  &:hover {
-    background: lighten(#333, 15);
+  .holder-wrap .menu-links {
+    display: block;
+    height: 5vh;
+    line-height: 5vh;
+    width: 33.3%;
+    color: white;
+    text-decoration: none;
+    background: lighten(#333, 5);
+    text-align: center;
+    &:hover {
+      background: lighten(#333, 15);
+    }
   }
 }
 
@@ -68,69 +68,17 @@ html, body {
 
 //---- MAIN FRONT PAGE
 
-.index {
-  display: flex;
-  justify-content: center;
-  .novel {
-    .ranking, .title {
-      text-align: center;
-    }
-    overflow-y: scroll;
-    height: 81vh;
-    width: 31%;
-    margin: auto 1%;
-    background-color: white;
-    color: black;
-    box-shadow: 1px 1px 10px #333;
-  }
-  p {
-    padding: 0 6px;
-  }
-  .linkparent .link {
-    display: block;
-    text-align: center;
-  }
-}
+@import 'index';
 
 //---- THE PAGE WITH THE TOP 8
 
-.top {
-  .line {
-    height: 40vh;
-    display: flex;
-    justify-content: center;
-    padding: 2vh 0 0 0;
-  }
-  #secondLine {
-    padding: 1vh 0 0 0;
-  }
-  .thumbnail {
-    overflow-y: auto;
-    margin: 0 20px 0 20px;
-    width: 19%;
-    padding: 0px 5px 10px 5px;
-    text-align: center;
-    background-color: white;
-    color: black;
-    box-shadow: 1px 1px 10px #333;
-    .title {
-      margin: 0;
-    }
-  }
-  .info {
-    position: relative;
-    display: inline;
-    top: 0;
-    left: -49%;
-    margin: 0;
-    border: 1px solid #333;
-    font-size: 110%;
-    padding: 0 4px 2px 4px;
-    cursor: pointer;
-  }
-}
+@import "top";
 
-// TOP 8 PAGE --- MODAL RULES
+//FULL LIST HTML RULES
+
+@import "full-list";
+
+// MODAL RULES
 
 .modal {
     display: none; /* Hidden by default */
@@ -161,7 +109,7 @@ html, body {
     }
 }
 
-/* The Close Button */
+/* The Modal Close Button */
 .close {
     color: #333;
     border: 1px solid #333;
@@ -174,93 +122,6 @@ html, body {
 .close:focus {
     text-decoration: none;
     cursor: pointer;
-}
-
-//FULL LIST HTML RULES
-
-.full-list {
-  overflow-y: auto;
-  .accordion {
-    background-color: white;
-    color: #333;
-    width: 70vw;
-    margin: 0 auto 0 auto;
-    padding: 3px 0;
-    border-width: 1px 0px 1px 0px;
-    border-top: solid darken($shadowBorder, 10%);
-    border-bottom: solid darken($shadowBorder, 10%);
-    outline: none;
-    transition: 0.4s;
-
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-
-    cursor: pointer;
-
-    a {
-      margin: 0;
-      padding: 0;
-      img {
-        display: block;
-      }
-    }
-    .ranking {
-      margin-left: auto;
-    }
-    .title {
-      font-size: 130%;
-      padding-left: 2vh;
-    }
-    .id-picture {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      width: 10.2vw;
-    }
-    .full-list-rankings {
-      width: 9.8vw;
-    }
-    .full-list-titles {
-      width: 50vw;
-    }
-  }
-  .active, .accordion:hover {
-    background-color: #ccc;
-  }
-  .panel {
-    margin: 20px 0 20px 0;
-    width: 100%;
-    padding: 20px;
-    display: none;
-    background-color: white;
-    text-align: left;
-    overflow: hidden;
-  }
-  .listHeader {
-    cursor: default;
-    &:hover {
-      background-color: white;
-    }
-    .title {
-      cursor: pointer;
-      height: 100%;
-      width: 46.7vw;
-      margin: 0;
-      padding: 2vh;
-      border-left: 2px solid $shadowBorder;
-      &:last-child {
-        box-sizing: border-box;
-        width: 10vw;
-      }
-      &:first-child{
-        box-sizing: border-box;
-        border: 0;
-        width: 10vw;
-      }
-    }
-  }
 }
 
 //----- ACROSS USABLE RULES
@@ -283,5 +144,4 @@ html, body {
   50% {transform: rotate(2deg);}
   75% {transform: rotate(-1deg);}
   100% {transform: rotate(0deg);}
-
 }

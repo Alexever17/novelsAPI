@@ -1,0 +1,23 @@
+.index {
+  display: flex;
+  justify-content: center;
+  .novel {
+    .ranking, .title {
+      text-align: center;
+    }
+    overflow-y: scroll;
+    height: 81vh;
+    width: 31%;
+    margin: auto 1%;
+    background-color: white;
+    color: black;
+    box-shadow: 1px 1px 10px #333;
+  }
+  p {
+    padding: 0 6px;
+  }
+  .linkparent .link {
+    display: block;
+    text-align: center;
+  }
+}

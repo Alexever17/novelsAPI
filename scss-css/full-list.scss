@@ -1,0 +1,93 @@
+.full-list {
+  overflow-y: auto;
+  .accordion {
+    background-color: white;
+    color: #333;
+    width: 70vw;
+    margin: 0 auto 0 auto;
+    padding: 3px 0;
+    border-width: 1px 0px 1px 0px;
+    border-top: solid darken($shadowBorder, 10%);
+    border-bottom: solid darken($shadowBorder, 10%);
+    outline: none;
+    transition: 0.4s;
+    font-size: 105%;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+
+    cursor: pointer;
+    user-select: text;
+
+    a {
+      margin: 0;
+      padding: 0;
+      img {
+        display: block;
+      }
+    }
+    .ranking {
+      margin-left: auto;
+      line-height: 0;
+    }
+    .title {
+      cursor: text;
+      padding-left: 2vh;
+      display: inline;
+    }
+    .id-picture {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 10.2vw;
+    }
+    .full-list-rankings {
+      width: 9.8vw;
+    }
+    .full-list-titles {
+      text-align: left;
+      width: 50vw;
+    }
+  }
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+  .panel {
+    margin: 20px 0 20px 0;
+    width: 100%;
+    padding: 20px;
+    display: none;
+    background-color: white;
+    text-align: left;
+    overflow: hidden;
+    font-size: 110%;
+  }
+  .listHeader {
+    cursor: default;
+    &:hover {
+      background-color: white;
+    }
+    .title {
+      text-align: left;
+      cursor: pointer;
+      height: 100%;
+      width: 46.7vw;
+      margin: 0;
+      padding: 2vh;
+      border-left: 2px solid $shadowBorder;
+      &:last-child {
+        margin-left: auto;
+        text-align: center;
+        box-sizing: border-box;
+        width: 10vw;
+      }
+      &:first-child{
+        box-sizing: border-box;
+        border: 0;
+        width: 10vw;
+      }
+    }
+  }
+}
