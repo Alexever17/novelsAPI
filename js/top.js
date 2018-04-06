@@ -17,10 +17,10 @@ function topBuild() {
 
   for (var j = 0; j < 8; j++) {
     //because some title are too long, the title text has to be cut at 35 characters
-    var characterLimiter = 35;
+    var characterLimiter = 33;
     // undexXXCharacterCheck takes in the id of a particular novel and the number
     // of character you want to have as output and gives back a string
-    var insert = underXXCharacterCheck(j, 35);
+    var insert = underXXCharacterCheck(j, characterLimiter);
     names[j].innerHTML = insert;
     holder[j].innerHTML = '<a href="'+lib[j].picSource+'"><img src="'+lib[j].picSource+'" alt="'+lib[j].name+' Cover'+'" class="cover" width="146px" height="210px"></a>';
   }

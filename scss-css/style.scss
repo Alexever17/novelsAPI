@@ -1,5 +1,6 @@
 $prim: #b46cff;
 $shadowBorder: rgba(0,0,0, 0.1);
+@import "mixins";
 
 html, body {
   margin: 0;
@@ -65,6 +66,8 @@ html, body {
     line-height: 5vh;
   }
 }
+
+
 
 //---- MAIN FRONT PAGE
 
@@ -144,4 +147,43 @@ html, body {
   50% {transform: rotate(2deg);}
   75% {transform: rotate(-1deg);}
   100% {transform: rotate(0deg);}
+}
+
+@include media(599px) {
+  html {
+    background: #333;
+  }
+  #header {
+    height: 7vh;
+    img {
+      height: 7vh;
+    }
+    .homebutton {
+      padding-left: 10px;
+    }
+    .holder-wrap{
+      width: 60vw;
+    }
+
+    .holder-wrap .menu-links {
+      font-size: 60%;
+      line-height: 1.75vh;
+      display: block;
+      height: 3.5vh;
+      width: 33.3%;
+    }
+  }
+  #main {
+    height: 90vh;
+    width: 300vw;
+    overflow-x: scroll;
+  }
+
+  #footer {
+    font-size: 80%;
+    height: 3vh;
+    a {
+      line-height: normal;
+    }
+  }
 }

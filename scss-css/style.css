@@ -101,6 +101,39 @@ html, body {
   text-align: center;
 }
 
+@media screen and (max-width: 599px) {
+  .index {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: auto;
+  }
+  .index .novel {
+    overflow-y: scroll;
+    height: 84vh;
+    width: 90vw;
+    margin: 3vh 5vw 3vh 5vw;
+  }
+  .index p {
+    padding: 0 6px;
+  }
+  .index .linkparent .link {
+    display: block;
+    text-align: center;
+  }
+  .index .novel:nth-child(3) {
+    margin-right: 20vw;
+  }
+}
 .top .line {
   height: 40vh;
   display: -webkit-box;
@@ -140,6 +173,57 @@ html, body {
   cursor: pointer;
 }
 
+@media screen and (max-width: 599px) {
+  body {
+    overflow-y: hidden;
+  }
+
+  .top {
+    overflow-y: hidden;
+  }
+  .top .line {
+    height: 40vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    padding: 3vh 0 0 0;
+  }
+  .top #secondLine {
+    padding: 2vh 0 0 0;
+  }
+  .top .holder {
+    margin-top: 1.7vh;
+  }
+  .top .thumbnail {
+    overflow-y: auto;
+    margin: 0 2vw 1vh 2vw;
+    width: 60vw;
+    padding: 0px 5px 10px 5px;
+  }
+  .top .thumbnail .title {
+    font-size: 90%;
+    font-weight: bolder;
+  }
+  .top .info {
+    position: relative;
+    display: inline;
+    top: 0;
+    left: -49%;
+    margin: 0;
+    border: 1px solid #333;
+    font-size: 110%;
+    padding: 0 4px 2px 4px;
+  }
+}
 .full-list {
   overflow-y: auto;
 }
@@ -368,5 +452,44 @@ html, body {
   100% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
+  }
+}
+@media screen and (max-width: 599px) {
+  html {
+    background: #333;
+  }
+
+  #header {
+    height: 7vh;
+  }
+  #header img {
+    height: 7vh;
+  }
+  #header .homebutton {
+    padding-left: 10px;
+  }
+  #header .holder-wrap {
+    width: 60vw;
+  }
+  #header .holder-wrap .menu-links {
+    font-size: 60%;
+    line-height: 1.75vh;
+    display: block;
+    height: 3.5vh;
+    width: 33.3%;
+  }
+
+  #main {
+    height: 90vh;
+    width: 300vw;
+    overflow-x: scroll;
+  }
+
+  #footer {
+    font-size: 80%;
+    height: 3vh;
+  }
+  #footer a {
+    line-height: normal;
   }
 }
