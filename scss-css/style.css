@@ -361,7 +361,7 @@ html, body {
     background: white;
   }
   .full-list .active {
-    background-color: #ccc;
+    background-color: white;
   }
   .full-list .listHeader {
     height: 7vh;
