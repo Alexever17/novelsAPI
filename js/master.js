@@ -1,8 +1,9 @@
 // a reload event to update text sizes when the width of the browser window changes
-window.addEventListener('resize', function () {
-    "use strict";
-    window.location.reload();
-});
+//NEED TO RESTRICT TO DESKTOP ONLY BEFORE USING
+// window.addEventListener('resize', function () {
+//     "use strict";
+//     window.location.reload();
+// });
 
 var mobileMenu = false;
 
