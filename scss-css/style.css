@@ -328,6 +328,58 @@ html, body {
   width: 10vw;
 }
 
+@media screen and (max-width: 599px) {
+  .full-list {
+    min-height: 90vh;
+    overflow-y: auto;
+  }
+  .full-list .accordion {
+    width: 100vw;
+    font-size: 100%;
+  }
+  .full-list .accordion .title {
+    padding-left: 0vw;
+    margin-left: 0vw;
+  }
+  .full-list .accordion .id-picture {
+    width: 21vw;
+  }
+  .full-list .accordion .full-list-rankings {
+    width: 19vw;
+  }
+  .full-list .accordion .full-list-titles {
+    text-align: left;
+    width: 57vw;
+    margin-left: 2vw;
+  }
+  .full-list .accordion:focus {
+    background: white;
+  }
+  .full-list .accordion:hover {
+    background: white;
+  }
+  .full-list .active {
+    background-color: #ccc;
+  }
+  .full-list .listHeader {
+    height: 7vh;
+  }
+  .full-list .listHeader .title {
+    width: auto;
+    line-height: 4vh;
+    padding: 5px 5px 5px 7px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0;
+    border-left: 2px solid rgba(0, 0, 0, 0.1);
+  }
+  .full-list .listHeader .title:last-child {
+    width: 20vw;
+  }
+  .full-list .listHeader .title:first-child {
+    width: 21vw;
+  }
+}
 .modal {
   display: none;
   /* Hidden by default */

@@ -92,5 +92,67 @@
 }
 
 @include media(599px) {
+  .full-list {
+    min-height: 90vh;
+    overflow-y: auto;
+    .accordion {
+      width: 100vw;
+      font-size: 100%;
+      a {
 
-}
+        img {
+
+        }
+      }
+      .ranking {
+
+      }
+      .title {
+        padding-left: 0vw;
+        margin-left: 0vw;
+      }
+      .id-picture {
+        width: 21vw;
+      }
+      .full-list-rankings {
+        width: 19vw;
+      }
+      .full-list-titles {
+        text-align: left;
+        width: 57vw;
+        margin-left: 2vw;
+      }
+    }
+    .accordion:focus {
+      background: white;
+    }
+    .accordion:hover {
+      background: white;
+    }
+    .active {
+      background-color: #ccc;
+    }
+
+
+    .panel {
+
+    }
+    .listHeader {
+      height: 7vh;
+      .title {
+        width: auto;
+        line-height: 4vh;
+        padding: 5px 5px 5px 7px;
+        box-sizing: border-box;
+        margin: 0;
+        border-left: 2px solid $shadowBorder;
+        &:last-child {
+          width: 20vw;
+        }
+        &:first-child{
+          width: 21vw;
+        }
+      }
+    }
+    }
+  }
