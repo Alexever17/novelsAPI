@@ -97,7 +97,7 @@
     overflow-y: auto;
     .accordion {
       width: 100vw;
-      font-size: 100%;
+      font-size: 80%;
       a {
 
         img {
@@ -115,12 +115,13 @@
         width: 21vw;
       }
       .full-list-rankings {
-        width: 19vw;
+        width: 10vw;
+        margin-left: 8.5vw;
       }
       .full-list-titles {
         text-align: left;
-        width: 57vw;
-        margin-left: 2vw;
+        width: 50vw;
+        margin-left: 4vw;
       }
     }
     .accordion:focus {
@@ -147,10 +148,10 @@
         margin: 0;
         border-left: 2px solid $shadowBorder;
         &:last-child {
-          width: 20vw;
+          width: 22vw;
         }
         &:first-child{
-          width: 21vw;
+          width: 22vw;
         }
       }
     }
