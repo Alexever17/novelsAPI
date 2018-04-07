@@ -53,6 +53,9 @@ html, body {
 #header .holder-wrap .menu-links:hover {
   background: #595959;
 }
+#header .icon {
+  display: none;
+}
 
 #main {
   height: 85vh;
@@ -101,39 +104,6 @@ html, body {
   text-align: center;
 }
 
-@media screen and (max-width: 599px) {
-  .index {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    overflow: auto;
-  }
-  .index .novel {
-    overflow-y: scroll;
-    height: 84vh;
-    width: 90vw;
-    margin: 3vh 5vw 3vh 5vw;
-  }
-  .index p {
-    padding: 0 6px;
-  }
-  .index .linkparent .link {
-    display: block;
-    text-align: center;
-  }
-  .index .novel:nth-child(3) {
-    margin-right: 20vw;
-  }
-}
 .top .line {
   height: 40vh;
   display: -webkit-box;
@@ -173,57 +143,6 @@ html, body {
   cursor: pointer;
 }
 
-@media screen and (max-width: 599px) {
-  body {
-    overflow-y: hidden;
-  }
-
-  .top {
-    overflow-y: hidden;
-  }
-  .top .line {
-    height: 40vh;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    padding: 3vh 0 0 0;
-  }
-  .top #secondLine {
-    padding: 2vh 0 0 0;
-  }
-  .top .holder {
-    margin-top: 1.7vh;
-  }
-  .top .thumbnail {
-    overflow-y: auto;
-    margin: 0 2vw 1vh 2vw;
-    width: 60vw;
-    padding: 0px 5px 10px 5px;
-  }
-  .top .thumbnail .title {
-    font-size: 90%;
-    font-weight: bolder;
-  }
-  .top .info {
-    position: relative;
-    display: inline;
-    top: 0;
-    left: -49%;
-    margin: 0;
-    border: 1px solid #333;
-    font-size: 110%;
-    padding: 0 4px 2px 4px;
-  }
-}
 .full-list {
   overflow-y: auto;
 }
@@ -455,41 +374,72 @@ html, body {
   }
 }
 @media screen and (max-width: 599px) {
-  html {
-    background: #333;
-  }
-
   #header {
     height: 7vh;
   }
-  #header img {
-    height: 7vh;
-  }
   #header .homebutton {
-    padding-left: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    padding: 0;
+  }
+  #header img {
+    margin-top: 0.5vh;
+    height: 6vh;
   }
   #header .holder-wrap {
-    width: 60vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    min-height: 7vh;
+    padding-left: 10px;
+    background: #333;
+    z-index: 1;
   }
   #header .holder-wrap .menu-links {
-    font-size: 60%;
-    line-height: 1.75vh;
+    display: none;
+  }
+  #header .icon {
     display: block;
-    height: 3.5vh;
-    width: 33.3%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 0 4vw 0 auto;
+    font-size: 280%;
+    text-decoration: none;
+    color: white;
+    line-height: 7vh;
+    z-index: 2;
   }
 
   #main {
-    height: 90vh;
-    width: 300vw;
-    overflow-x: scroll;
+    height: 85vh;
+    width: 100%;
+    min-width: 300px;
+    background-color: #999999;
   }
 
   #footer {
-    font-size: 80%;
-    height: 3vh;
+    background: #333;
+    color: white;
+    height: 5vh;
+    text-align: center;
   }
   #footer a {
-    line-height: normal;
+    color: white;
+    line-height: 5vh;
+  }
+
+  .mobile-link {
+    display: block;
+    width: 100%;
+    line-height: 7vh;
+    background: #333;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid #999;
   }
 }

@@ -47,7 +47,12 @@ html, body {
       background: lighten(#333, 15);
     }
   }
+  .icon {
+    display: none;
+  }
 }
+
+
 
 #main {
   height: 85vh;
@@ -150,40 +155,71 @@ html, body {
 }
 
 @include media(599px) {
-  html {
-    background: #333;
-  }
   #header {
     height: 7vh;
-    img {
-      height: 7vh;
-    }
     .homebutton {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 99;
+      padding: 0;
+    }
+    img {
+      margin-top: 0.5vh;
+      height: 6vh;
+    }
+    .holder-wrap {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      text-align: center;
+      min-height: 7vh;
       padding-left: 10px;
+      background: #333;
+      z-index: 1;
+      .menu-links {
+        display: none;
+      }
     }
-    .holder-wrap{
-      width: 60vw;
-    }
-
-    .holder-wrap .menu-links {
-      font-size: 60%;
-      line-height: 1.75vh;
-      display: block;
-      height: 3.5vh;
-      width: 33.3%;
+    .icon {
+       display: block;
+       position: absolute;
+       right: 0;
+       top: 0;
+       margin: 0 4vw 0 auto;
+       font-size: 280%;
+       text-decoration: none;
+       color: white;
+       line-height: 7vh;
+       z-index: 2;
     }
   }
+
   #main {
-    height: 90vh;
-    width: 300vw;
-    overflow-x: scroll;
+    height: 85vh;
+    width: 100%;
+    min-width: 300px;
+    background-color: lighten(#333, 40);
   }
 
   #footer {
-    font-size: 80%;
-    height: 3vh;
+    background: #333;
+    color: white;
+    height: 5vh;
+    text-align: center;
     a {
-      line-height: normal;
+      color: white;
+      line-height: 5vh;
     }
+  }
+  .mobile-link {
+    display: block;
+    width: 100%;
+    line-height: 7vh;
+    background: #333;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid #999;
   }
 }

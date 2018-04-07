@@ -4,6 +4,25 @@ window.addEventListener('resize', function () {
     window.location.reload();
 });
 
+var mobileMenu = false;
+
+document.querySelector(".icon").addEventListener("click", function() {
+  var el = document.querySelectorAll("#header .holder-wrap a");
+  if (mobileMenu) {
+    for (var i = 1; i < el.length; i++) {
+      el[i].style.display = "none";
+      el[i].className = "menu-links";
+    }
+  } else {
+    for (var j = 1; j < el.length; j++) {
+      el[j].style.display = "block";
+      el[j].className = "mobile-link";
+    }
+  }
+  mobileMenu = (mobileMenu) ? false : true;
+});
+
+
 //this function is sorting the accordion elements in the page its being invoked on
 function sortList() {
   // this creates a true array out of the html collection given by the queryselector

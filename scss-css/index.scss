@@ -23,27 +23,5 @@
 }
 
 @include media(599px) {
-  .index {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
-    overflow: auto;
-    .novel {
-      overflow-y: scroll;
-      height: 84vh;
-      width: 90vw;
-      margin: 3vh 5vw 3vh 5vw;
-    }
-    p {
-      padding: 0 6px;
-    }
-    .linkparent .link {
-      display: block;
-      text-align: center;
-    }
-    .novel:nth-child(3) {
-      margin-right: 20vw;
-    }
-  }
+  
 }
