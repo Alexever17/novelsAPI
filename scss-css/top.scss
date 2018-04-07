@@ -43,20 +43,20 @@
       height: auto;
       width: 50vw;
       display: flex;
-      justify-content: space-around;
+      justify-content: flex-start;
       flex-direction: column;
       flex-wrap: wrap;
       box-sizing: border-box;
       padding: 2.5vh 5% 2.5vh 5%;
     }
     #secondLine {
-      padding: 2.5vh 5% 2.5vh 5%;
+      padding: 2.5vh 10% 2.5vh 0%;
     }
     .thumbnail {
       overflow-y: auto;
       box-sizing: border-box;
-      margin: 0;
-      width: 90%;
+      margin: 0 0 1vh 0;
+      width: 100%;
       padding: 0px 5px 10px 5px;
       text-align: center;
       background-color: white;
@@ -68,13 +68,13 @@
     }
     .info {
       position: relative;
-      display: inline;
+      display: block;
       top: 0;
-      left: -49%;
-      margin: 0;
+      left: 0%;
+      margin: 3px;
       border: 1px solid #333;
-      font-size: 110%;
-      padding: 0 4px 2px 4px;
+      font-size: 150%;
+      padding: 0;
       cursor: pointer;
     }
   }
