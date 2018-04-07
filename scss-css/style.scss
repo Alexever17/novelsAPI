@@ -160,12 +160,12 @@ html, body {
     .homebutton {
       position: absolute;
       top: 0;
-      left: 0;
+      left: 2vw;
       z-index: 99;
       padding: 0;
     }
     img {
-      margin-top: 0.5vh;
+      margin-top: 0.7vh;
       height: 6vh;
     }
     .holder-wrap {
@@ -197,22 +197,20 @@ html, body {
   }
 
   #main {
-    height: 85vh;
+    height: auto;
     width: 100%;
     min-width: 300px;
     background-color: lighten(#333, 40);
   }
 
   #footer {
-    background: #333;
-    color: white;
-    height: 5vh;
-    text-align: center;
+    height: 3vh;
+    font-size: 70%;
     a {
-      color: white;
-      line-height: 5vh;
+      line-height: 3vh;
     }
   }
+
   .mobile-link {
     display: block;
     width: 100%;

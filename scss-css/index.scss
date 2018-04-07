@@ -6,7 +6,7 @@
       text-align: center;
     }
     overflow-y: scroll;
-    height: 81vh;
+    height: 80vh;
     width: 31%;
     margin: auto 1%;
     background-color: white;
@@ -23,5 +23,16 @@
 }
 
 @include media(599px) {
-  
+  .index {
+    flex-direction: column;
+    overflow-y: scroll;
+    height: (90vh * 3);
+    .novel {
+      width: 80%;
+      margin: 5vh 10% 0 10%;
+      &:last-child {
+        margin: 5vh 10% 5vh 10%;
+      }
+    }
+  }
 }

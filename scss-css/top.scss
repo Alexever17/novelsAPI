@@ -35,5 +35,47 @@
 }
 
 @include media(599px) {
-  
+  .top {
+    display: flex;
+    justify-content: center;
+    overflow: auto;
+    .line {
+      height: auto;
+      width: 50vw;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      flex-wrap: wrap;
+      box-sizing: border-box;
+      padding: 2.5vh 5% 2.5vh 5%;
+    }
+    #secondLine {
+      padding: 2.5vh 5% 2.5vh 5%;
+    }
+    .thumbnail {
+      overflow-y: auto;
+      box-sizing: border-box;
+      margin: 0;
+      width: 90%;
+      padding: 0px 5px 10px 5px;
+      text-align: center;
+      background-color: white;
+      color: black;
+      box-shadow: 1px 1px 10px #333;
+      .title {
+        margin: 0;
+      }
+    }
+    .info {
+      position: relative;
+      display: inline;
+      top: 0;
+      left: -49%;
+      margin: 0;
+      border: 1px solid #333;
+      font-size: 110%;
+      padding: 0 4px 2px 4px;
+      cursor: pointer;
+    }
+  }
 }

@@ -7,8 +7,7 @@
     margin: 0 auto 0 auto;
     padding: 3px 0;
     border-width: 1px 0px 1px 0px;
-    border-top: solid darken($shadowBorder, 10%);
-    border-bottom: solid darken($shadowBorder, 10%);
+    border: solid darken($shadowBorder, 10%);
     outline: none;
     transition: 0.4s;
     font-size: 105%;
@@ -90,4 +89,8 @@
       }
     }
   }
+}
+
+@include media(599px) {
+
 }
