@@ -132,6 +132,36 @@ html, body {
     cursor: pointer;
 }
 
+@include media(599px) {
+  .modal {
+    padding-top: 0px;
+  }
+  .modalContent {
+    background-color: white;
+    margin: 9vh auto auto auto;
+    padding: 20px;
+    width: 80%;
+    height: 80%;
+    overflow: auto;
+    .link {
+      display: block;
+    }
+    .title, .link, .ranking {
+      text-align: center;
+    }
+  }
+  .close {
+    text-align: center;
+    font-size: 130%;
+    background: white;
+    padding: 0 4px 2px 4px;
+    margin: 0;
+    display: block;
+    position: sticky;
+    top: 0;
+  }
+}
+
 //----- ACROSS USABLE RULES
 
 .holder {
@@ -165,7 +195,7 @@ html, body {
       padding: 0;
     }
     img {
-      margin-top: 0.7vh;
+      margin-top: 0.6vh;
       height: 6vh;
     }
     .holder-wrap {
@@ -177,7 +207,7 @@ html, body {
       min-height: 7vh;
       padding-left: 10px;
       background: #333;
-      z-index: 1;
+      z-index: 2;
       .menu-links {
         display: none;
       }
@@ -192,7 +222,7 @@ html, body {
        text-decoration: none;
        color: white;
        line-height: 7vh;
-       z-index: 2;
+       z-index: 3;
     }
   }
 
