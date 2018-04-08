@@ -49,7 +49,7 @@ if (a.children[1].children[0].innerHTML < b.children[1].children[0].innerHTML)
   return -1;
 if (a.children[1].children[0].innerHTML > b.children[1].children[0].innerHTML)
   return 1;
-return 0;
+return 1;
 }
 
 //takes as variable the id for the lib entry and inputs the data into the modal which is first hidden.
