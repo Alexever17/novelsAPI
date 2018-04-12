@@ -1,0 +1,29 @@
+{
+  "name": "novels",
+  "version": "1.0.0",
+  "description": "An overview of my favorite japanese/chinese/korean novels and my ratings for them <br>\r https://alexever17.github.io/novels/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alexever17/novelupdates.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alexever17/novelupdates/issues"
+  },
+  "homepage": "https://github.com/Alexever17/novelupdates#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.14",
+    "npm": "^5.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.3"
+  }
+}
