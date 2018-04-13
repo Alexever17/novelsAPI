@@ -24,18 +24,23 @@ router.post("/novels", function(req, res, next) {
 
 //update a novel in the db
 router.put("/novels/:id", function(req, res, next) {
-    res.send({
-        type: "PUT"
+    //handy mongoose method
+    Novel.findByIdAndUpdate({
+        //id parameter of the api
+        _id: req.params.id
+    }, req.body).then(function(novel){
+        //mongoose method --> find one record
+        Novel.findOne({_id: req.params.id}).then(function(novel){
+            res.send(novel);
+        })
     });
 });
 
 //delete an entry from db
 router.delete("/novels/:id", function(req, res, next) {
-    //log the id parameter of the api
-    // console.log(req.params.id);
-
     //handy mongoose method
     Novel.findByIdAndRemove({
+        //id parameter of the api
         _id: req.params.id
     }).then(function(novel){
         res.send(novel);
