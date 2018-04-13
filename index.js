@@ -1,29 +1,36 @@
 //loading express into the file
-const express = require('express');
+const express = require("express");
 //loading in the body parser
-const bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
 
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 //set up express app
 const app = express();
 
-
 //connect to mongodb
-mongoose.connect('mongodb://localhost/novelgo');
+mongoose.connect("mongodb://localhost/novelgo");
 mongoose.Promise = global.Promise;
 
 //parsing the body of the request -- middleware between the request and the express routes
 app.use(bodyParser.json());
 
 //telling express to use the specified routes
-app.use('/api', require('./routes/api'));
+app.use("/api", require("./routes/api"));
 
-//listen for requests
-app.listen(process.env.PORT || 4000, function(){
-  console.log("now listening for requests");
+//errorhandling middleware
+// from the .catch(next) in the api.js file
+app.use(function(error, req, res, next) {
+    // console.log(error);
+    res.status(422).send({
+        error: error.message
+    });
 });
 
+//listen for requests
+app.listen(process.env.PORT || 4000, function() {
+    console.log("now listening for requests");
+});
 
 // How this all works is like this:
 // There is the index.js where the express app gets invoked, which uses
