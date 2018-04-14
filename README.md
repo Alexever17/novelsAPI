@@ -13,8 +13,8 @@ Just fork it and get it on your machine. Then just go "npm install" in the folde
 ## DOC
 
 ### GET REQUEST
-https://alexever17.herokuapp.com/api/novels?sort=<number>&find=<nationality> <br>
-retrieves all novels, needs the number:
+https://alexever17.herokuapp.com/api/novels?sort=number&find=nationality <br>
+retrieves all novels, needs the number: <br>
 <br>
 https://alexever17.herokuapp.com/api/novels?sort=1 <br>
 Sort all novels by the ranking --> 5 to 1 <br>
