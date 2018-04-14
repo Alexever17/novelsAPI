@@ -18,7 +18,7 @@ router.post("/novels", function(req, res, next) {
     //is actually completed and everything worked. When finished fires the response of the request.
     Novel.create(req.body).then(function(novel) {
             //response of the request
-            res.send(novel, "wtf am i doing");
+            res.send("You have created the following novel " + novel.name);
         }).catch(next);
 });
 
