@@ -2,8 +2,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+
+// import the dotenv tool
+// .config() defaults to reading the top-level .env file
+require('dotenv').config();
+
 //const to store the port given by the environment or 5000 as the fallback or when working localy
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5000;
 
 const app = express();
 
@@ -11,7 +16,8 @@ app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
 
 //connect to mongodb
-mongoose.connect("mongodb://public:dontcome17@ds217138.mlab.com:17138/novelsdata");
+// we use the dotenv package to read the top-level .env file which stores our protected credentials
+mongoose.connect(process.env.DB_URI);
 mongoose.Promise = global.Promise;
 
 //parsing the body of the request -- middleware between the request and the express routes
