@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "An overview of my favorite japanese/chinese/korean novels and my ratings for them <br>\r https://alexever17.github.io/novels/",
   "main": "index.js",
+  "engines": {
+    "node": "8.9.1"
+  },
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,5 +29,5 @@
   },
   "devDependencies": {
     "nodemon": "^1.17.3"
-  }
+}
 }

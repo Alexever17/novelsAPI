@@ -5,11 +5,16 @@ const bodyParser = require("body-parser");
 
 const mongoose = require("mongoose");
 
-//set up express app
-const app = express();
+const path = require('path')
+const PORT = process.env.PORT || 5000
+
+const app = express()
+  .use(express.static(path.join(__dirname, 'frontend')))
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`));
+
 
 //connect to mongodb
-mongoose.connect("mongodb://localhost/novelgo");
+mongoose.connect("mongodb://public:dontcome17@ds217138.mlab.com:17138/novelsdata");
 mongoose.Promise = global.Promise;
 
 //parsing the body of the request -- middleware between the request and the express routes
@@ -25,11 +30,6 @@ app.use(function(error, req, res, next) {
     res.status(422).send({
         error: error.message
     });
-});
-
-//listen for requests
-app.listen(process.env.PORT || 4000, function() {
-    console.log("now listening for requests");
 });
 
 // How this all works is like this:
