@@ -8,9 +8,9 @@ const mongoose = require("mongoose");
 const path = require('path')
 const PORT = process.env.PORT || 5000
 
-const app = express()
-  .use(express.static(path.join(__dirname, 'frontend')))
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`));
+const app = express();
+
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
 
 //connect to mongodb

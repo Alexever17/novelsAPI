@@ -2,7 +2,7 @@
   "name": "Alexever17 Novels Ranking",
   "description": "An overview of my favorite japanese/chinese/korean novels and my ratings for them <br>\r https://alexever17.github.io/novels/",
   "repository": "https://github.com/alexever17/novels",
-  "logo": "/frontend/pic/logo.png",
+  "logo": "https://alexever17.github.io/novels/frontend/pic/logo.png",
   "keywords": ["node", "express", "heroku"],
   "image": "heroku/nodejs"
 }
