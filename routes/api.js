@@ -5,8 +5,24 @@ const Novel = require("../models/novel");
 
 //get a list of novels from the database
 router.get("/novels", function(req, res, next) {
-    res.send({
-        type: "GET"
+    //thats how you can access the parameter in a api request ?name=max
+    var mySort = {};
+    if (req.query.sort == 1) {
+        mySort = { ranking: -1 };
+    }
+    if (req.query.sort == 2) {
+        mySort = { ranking: 1 };
+    }
+    if (req.query.sort == 3) {
+        mySort = { name: 1 };
+    }
+    if (req.query.sort == 4) {
+        mySort = { name: -1 };
+    }
+
+    //.find retrieves all the data in the database and .sort is sorting them by asc or desc 1/-1
+    Novel.find().sort(mySort).then(function(novels){
+            res.send(novels);
     });
 });
 

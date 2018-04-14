@@ -1,11 +1,8 @@
-//loading express into the file
+//loading express, body parser and mongoose into the file
 const express = require("express");
-//loading in the body parser
 const bodyParser = require("body-parser");
-
 const mongoose = require("mongoose");
-
-const path = require('path')
+//const to store the port given by the environment or 5000 as the fallback or when working localy
 const PORT = process.env.PORT || 5000
 
 const app = express();
