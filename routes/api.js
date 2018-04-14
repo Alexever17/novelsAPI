@@ -6,22 +6,33 @@ const Novel = require("../models/novel");
 //get a list of novels from the database
 router.get("/novels", function(req, res, next) {
     //thats how you can access the parameter in a api request ?name=max
+    var myFind = {};
+    if (req.query.find !== undefined) {
+        //finding only the corresponding novels from the following: japanese, chinese, korean
+        myFind = {origin:req.query.find};
+    }
+
+    //sorting all the entries by those 4 mothods:
     var mySort = {};
     if (req.query.sort == 1) {
+        //5 to 1
         mySort = { ranking: -1 };
     }
     if (req.query.sort == 2) {
+        //1 to 5
         mySort = { ranking: 1 };
     }
     if (req.query.sort == 3) {
+        //alphabetical
         mySort = { name: 1 };
     }
     if (req.query.sort == 4) {
+        //reverse alphabet
         mySort = { name: -1 };
     }
 
     //.find retrieves all the data in the database and .sort is sorting them by asc or desc 1/-1
-    Novel.find().sort(mySort).then(function(novels){
+    Novel.find(myFind).sort(mySort).then(function(novels){
             res.send(novels);
     });
 });
@@ -34,7 +45,7 @@ router.post("/novels", function(req, res, next) {
     //is actually completed and everything worked. When finished fires the response of the request.
     Novel.create(req.body).then(function(novel) {
             //response of the request
-            res.send("You have created the following novel " + novel.name);
+            res.send("You have created the following novel '" + novel.name + "'.");
         }).catch(next);
 });
 
@@ -48,7 +59,7 @@ router.put("/novels/:id", function(req, res, next) {
         //mongoose method --> find one record
         Novel.findOne({_id: req.params.id}).then(function(novel){
             res.send(novel);
-        })
+        });
     });
 });
 
