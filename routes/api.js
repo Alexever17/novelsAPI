@@ -3,9 +3,10 @@ const express = require("express");
 const router = express.Router();
 const Novel = require("../models/novel");
 var ObjectId = require('mongodb').ObjectID;
+var cors = require('cors')
 
 //get a list of novels from the database
-router.get("/novels", function(req, res, next) {
+router.get('/novels', cors(), function (req, res, next) {
     //thats how you can access the parameter in a api request ?name=max
     var myFind = {};
     if (req.query.find !== undefined) {
