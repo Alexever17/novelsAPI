@@ -3,10 +3,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
-// import the dotenv tool
-// .config() defaults to reading the top-level .env file
-require('dotenv').config();
-
 //const to store the port given by the environment or 5000 as the fallback or when working localy
 const PORT = process.env.PORT || 5000;
 
@@ -16,7 +12,7 @@ app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
 
 //connect to mongodb
-// we use the dotenv package to read the top-level .env file which stores our protected credentials
+// using the environmental settings from heroku which stores our protected credentials --> db_uri
 mongoose.connect(process.env.DB_URI);
 mongoose.Promise = global.Promise;
 
