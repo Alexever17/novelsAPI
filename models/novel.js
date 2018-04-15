@@ -18,7 +18,8 @@ const NovelSchema = new Schema({
     },
     url: {
         type: String,
-        required: [true, "Url is required"]
+        required: [true, "Url is required"],
+        // add some url validation from the validator.js library
     },
     picSource: {
         type: String,
@@ -34,5 +35,5 @@ const NovelSchema = new Schema({
 //creating a new model where the novels will be stored, which require the NovelSchema (second parameter)
 const Novel = mongoose.model("novel", NovelSchema);
 
-//exporting the schema to use it in other files
+//exporting the model (based on the schema) to use it in other files
 module.exports = Novel;
