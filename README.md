@@ -12,11 +12,33 @@ Just fork it and get it on your machine. Then just go "npm install" in the folde
 
 ## DOC
 
-### GET REQUEST
-https://alexever17.herokuapp.com/api/novels?sort=number&find=nationality <br>
-retrieves all novels, needs the number: <br>
+## GET REQUEST
+
+### Getting all the database
+https://alexever17.herokuapp.com/api/novels<br>
+<br>
+### Get a specific novel
+https://alexever17.herokuapp.com/api/novel/5ad27708ed35670004feb933<br>
+just change the last part after /novel for a different one, you can find the id in the full version of the database <br>
+<br>
+### Country of origin
+https://alexever17.herokuapp.com/api/novels/origin/chinese <br>
+finding only novels with chinese origin <br>
+https://alexever17.herokuapp.com/api/novels/origin/japanese <br>
+finding only novels with japanese origin <br>
+https://alexever17.herokuapp.com/api/novels/origin/korean <br>
+finding only novels with korean origin <br>
+<br>
+### Ranking
+https://alexever17.herokuapp.com/api/novels/ranking/3 <br>
+You can get a query containing only the novels with this specific Ranking <br>
+possible input after ranking/ is 1 to 5 <br>
 <br>
 ### Sorting
+Sorting can be aplied to every get request except for the one where you retrieve a single novel<br>
+just change the link before the ?<br>
+<br>
+examples:<br>
 https://alexever17.herokuapp.com/api/novels?sort=1 <br>
 Sort all novels by the ranking --> 5 to 1 <br>
 https://alexever17.herokuapp.com/api/novels?sort=2 <br>
@@ -26,26 +48,6 @@ Sorting alphabetically <br>
 https://alexever17.herokuapp.com/api/novels?sort=4 <br>
 Sorting reverse alphabetically <br>
 <br>
-### Country of origin
-https://alexever17.herokuapp.com/api/novels?find=chinese <br>
-finding only novels with chinese origin <br>
-https://alexever17.herokuapp.com/api/novels?find=japanese <br>
-finding only novels with japanese origin <br>
-https://alexever17.herokuapp.com/api/novels?find=korean <br>
-finding only novels with korean origin <br>
-<br>
-### ID
-https://alexever17.herokuapp.com/api/novels?id=5ad2670c835be300042faabf <br>
-example get request for an id, you can find ids by searching through all the entries with: <br>
-https://alexever17.herokuapp.com/api/novels <br>
-<br>
-### Combinations
-combination also possible: <br>
-https://alexever17.herokuapp.com/api/novels?find=chinese&sort=3 <br>
-finding only novels with chinese origin and sorting by alphabet <br>
-<br>
-<br>
-
 
 ### Other REQUEST
 
