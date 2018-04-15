@@ -10,7 +10,6 @@ const app = express();
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
-
 //connect to mongodb
 // using the environmental settings from heroku which stores our protected credentials --> db_uri
 mongoose.connect(process.env.DB_URI);

@@ -16,6 +16,7 @@ Just fork it and get it on your machine. Then just go "npm install" in the folde
 https://alexever17.herokuapp.com/api/novels?sort=number&find=nationality <br>
 retrieves all novels, needs the number: <br>
 <br>
+### Sorting
 https://alexever17.herokuapp.com/api/novels?sort=1 <br>
 Sort all novels by the ranking --> 5 to 1 <br>
 https://alexever17.herokuapp.com/api/novels?sort=2 <br>
@@ -25,6 +26,7 @@ Sorting alphabetically <br>
 https://alexever17.herokuapp.com/api/novels?sort=4 <br>
 Sorting reverse alphabetically <br>
 <br>
+### Country of origin
 https://alexever17.herokuapp.com/api/novels?find=chinese <br>
 finding only novels with chinese origin <br>
 https://alexever17.herokuapp.com/api/novels?find=japanese <br>
@@ -32,9 +34,18 @@ finding only novels with japanese origin <br>
 https://alexever17.herokuapp.com/api/novels?find=korean <br>
 finding only novels with korean origin <br>
 <br>
+### ID
+https://alexever17.herokuapp.com/api/novels?id=5ad2670c835be300042faabf <br>
+example get request for an id, you can find ids by searching through all the entries with: <br>
+https://alexever17.herokuapp.com/api/novels <br>
+<br>
+### Combinations
 combination also possible: <br>
 https://alexever17.herokuapp.com/api/novels?find=chinese&sort=3 <br>
 finding only novels with chinese origin and sorting by alphabet <br>
+<br>
+<br>
+
 
 ### Other REQUEST
 

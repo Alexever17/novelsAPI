@@ -2,6 +2,7 @@
 const express = require("express");
 const router = express.Router();
 const Novel = require("../models/novel");
+var ObjectId = require('mongodb').ObjectID;
 
 //get a list of novels from the database
 router.get("/novels", function(req, res, next) {
@@ -29,6 +30,15 @@ router.get("/novels", function(req, res, next) {
     if (req.query.sort == 4) {
         //reverse alphabet
         mySort = { name: -1 };
+    }
+
+    var myId = {};
+    if (req.query.id !== undefined) {
+        //finding only the corresponding novels from the following: japanese, chinese, korean
+        myId = ObjectId(req.query.id);
+        Novel.findOne(myId).then(function(novel){
+            res.send(novel);
+        });
     }
 
     //.find retrieves all the data in the database and .sort is sorting them by asc or desc 1/-1
