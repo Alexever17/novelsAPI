@@ -5,51 +5,54 @@ const Novel = require("../models/novel");
 var ObjectId = require('mongodb').ObjectID;
 var cors = require('cors')
 
-//get a list of novels from the database
+//getting all of the database and sorting capabilities
 router.get('/novels', cors(), function (req, res, next) {
-    //thats how you can access the parameter in a api request ?name=max
-
     //sorting function taking in the query from user
     var mySort = sorting(req.query.sort);
 
-    var myFind = {};
-    if (req.query.find !== undefined) {
-        //finding only the corresponding novels from the following: japanese, chinese, korean
-        myFind = {origin:req.query.find};
-    }
-
-    //.find retrieves all the data in the database and .sort is sorting them by asc or desc 1/-1
-    Novel.find(myFind).sort(mySort).then(function(novels){
-            res.send(novels);
+    //find retrieves all the data in the database and .sort is sorting them by asc or desc 1/-1
+    Novel.find().sort(mySort).then(function (novels) {
+        res.send(novels);
     });
 });
 
-router.get('/novel', cors(), function (req, res, next) {
-    var myId = {};
-    if (req.query.id !== undefined) {
-        //finding only the corresponding novels from the following: japanese, chinese, korean
-        myId = ObjectId(req.query.id);
-        Novel.findOne(myId).then(function(novel){
-            res.send(novel);
-        });
-    }
+//getting one specific novel
+router.get('/novel/:id', cors(), function (req, res, next) {
+    //takes in the ID of the novels and formats it
+    const myId = req.params.id ? ObjectId(req.params.id) : {};
+
+    //takes in the formated id and retrievs the documents
+    Novel.findOne(myId).then(function(novel){
+        res.send(novel);
+    });
 });
 
-router.get('/novels/ranking/:rank', cors(), function (req, res, next) {
+//getting a collection of novel based on the origin provided
+router.get('/novels/origin/:find', cors(), function (req, res, next) {
+    // looks if the origin was specified and formats the input accordingly
+    const myFind = req.params.find ? { origin: req.params.find } : {};
+
     //sorting function taking in the query from user
     var mySort = sorting(req.query.sort);
 
-    var myRank = {};
-    if (req.params.rank !== undefined) {
-        //taking the input and converting it tp an number and using it as a search paramter --> myRank
-        var number = Number(req.params.rank);
-        console.log(req.params.rank);
-        myRank = {ranking:number};
-        //finding only the corresponding novels with following rankings: 1 to 5
-        Novel.find(myRank).sort(mySort).then(function(novels){
-                res.send(novels);
-        }).catch(next);
-    }
+    //retrieves the data according to the myFind parameter and .sort is sorting them by asc or desc 1/-1
+    Novel.find(myFind).sort(mySort).then(function (novels) {
+        res.send(novels);
+    });
+});
+
+//getting a collection of novels based on the ranking provided
+router.get('/novels/ranking/:rank', cors(), function (req, res, next) {
+    const number = Number(req.params.rank);
+    const myRank = {ranking:number} || {};
+
+    //sorting function taking in the query from user
+    var mySort = sorting(req.query.sort);
+
+    //finding only the corresponding novels with following rankings: 1 to 5
+    Novel.find(myRank).sort(mySort).then(function(novels){
+            res.send(novels);
+    });
 });
 
 //function to process the query typed in the url to a sorting parameter
