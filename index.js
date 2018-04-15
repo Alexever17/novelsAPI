@@ -13,7 +13,7 @@ app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
 //connect to mongodb
 // using the environmental settings from heroku which stores our protected credentials --> db_uri
-mongoose.connect(process.env.DB_URI);
+mongoose.connect("mongodb://internetWarrior:171019951717@ds217138.mlab.com:17138/novelsdata");
 mongoose.Promise = global.Promise;
 
 //parsing the body of the request -- middleware between the request and the express routes

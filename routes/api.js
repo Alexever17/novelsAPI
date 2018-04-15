@@ -8,31 +8,23 @@ var cors = require('cors')
 //get a list of novels from the database
 router.get('/novels', cors(), function (req, res, next) {
     //thats how you can access the parameter in a api request ?name=max
+
+    //sorting function taking in the query from user
+    var mySort = sorting(req.query.sort);
+
     var myFind = {};
     if (req.query.find !== undefined) {
         //finding only the corresponding novels from the following: japanese, chinese, korean
         myFind = {origin:req.query.find};
     }
 
-    //sorting all the entries by those 4 mothods:
-    var mySort = {};
-    if (req.query.sort == 1) {
-        //5 to 1
-        mySort = { ranking: -1 };
-    }
-    if (req.query.sort == 2) {
-        //1 to 5
-        mySort = { ranking: 1 };
-    }
-    if (req.query.sort == 3) {
-        //alphabetical
-        mySort = { name: 1 };
-    }
-    if (req.query.sort == 4) {
-        //reverse alphabet
-        mySort = { name: -1 };
-    }
+    //.find retrieves all the data in the database and .sort is sorting them by asc or desc 1/-1
+    Novel.find(myFind).sort(mySort).then(function(novels){
+            res.send(novels);
+    });
+});
 
+router.get('/novel', cors(), function (req, res, next) {
     var myId = {};
     if (req.query.id !== undefined) {
         //finding only the corresponding novels from the following: japanese, chinese, korean
@@ -41,12 +33,41 @@ router.get('/novels', cors(), function (req, res, next) {
             res.send(novel);
         });
     }
-
-    //.find retrieves all the data in the database and .sort is sorting them by asc or desc 1/-1
-    Novel.find(myFind).sort(mySort).then(function(novels){
-            res.send(novels);
-    });
 });
+
+router.get('/novels/ranking/:rank', cors(), function (req, res, next) {
+    //sorting function taking in the query from user
+    var mySort = sorting(req.query.sort);
+
+    var myRank = {};
+    if (req.params.rank !== undefined) {
+        //taking the input and converting it tp an number and using it as a search paramter --> myRank
+        var number = Number(req.params.rank);
+        console.log(req.params.rank);
+        myRank = {ranking:number};
+        //finding only the corresponding novels with following rankings: 1 to 5
+        Novel.find(myRank).sort(mySort).then(function(novels){
+                res.send(novels);
+        }).catch(next);
+    }
+});
+
+//function to process the query typed in the url to a sorting parameter
+function sorting(input) {
+    input = Number(input);
+    switch (input) {
+        case 1:
+            return { ranking: -1 };
+        case 2:
+            return { ranking: 1 };
+        case 3:
+            return { name: 1 };
+        case 4:
+            return { name: -1 };
+        default:
+            return {};
+    }
+}
 
 //post a new novel to the database
 router.post("/novels", function(req, res, next) {
