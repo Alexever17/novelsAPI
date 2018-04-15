@@ -53,6 +53,20 @@ Sorting reverse alphabetically <br>
 
 Please do not use it.
 
+## Data Format inside the data base:
+
+an example:
+{
+    "_id" : ObjectId("5ad27708ed35670004feb933"),
+    "description" : "“What I want, the Heavens shall not lack! ” “What I don’t want, had better not exist in the Heavens!” ",
+    "origin" : "chinese",
+    "name" : "I Shall Seal the Heavens",
+    "ranking" : 2,
+    "url" : "https://www.novelupdates.com/series/i-shall-seal-the-heavens/",
+    "picSource" : "https://cdn.novelupdates.com/images/2015/06/15_ISSTH.jpg",
+    "__v" : 0
+}
+
 ## Built With
 
 * [NODE.JS](https://nodejs.org/en/) - The backend
