@@ -27,6 +27,13 @@ router.get('/novel/:id', cors(), function (req, res, next) {
     });
 });
 
+// stats from db
+router.get('/novels/stats', cors(), function (req, res, next) {
+    db.stats().then(function (stats) {
+        res.send(stats);
+    });
+});
+
 //getting a collection of novel based on the origin provided
 router.get('/novels/origin/:find', cors(), function (req, res, next) {
     // looks if the origin was specified and formats the input accordingly

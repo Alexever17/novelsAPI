@@ -3,7 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 var cors = require('cors');
-
+require('dotenv').config();
 //const to store the port given by the environment or 5000 as the fallback or when working localy
 const PORT = process.env.PORT || 5000;
 
