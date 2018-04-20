@@ -29,7 +29,7 @@ router.get('/novel/:id', cors(), function (req, res, next) {
 
 // stats from db
 router.get('/novels/stats', cors(), function (req, res, next) {
-        res.send(Novel.collection.stats());
+        res.send("test");
     });
 });
 
