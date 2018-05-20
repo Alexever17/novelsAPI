@@ -71,8 +71,10 @@ an example:<br>
     "dropped" : false,<br>
     "dataAdded" : "28.05.2018",<br>
     "__v" : 0<br>
-}<br>
+}
 <br>
+<br>
+
 ## Built With
 
 * [NODE.JS](https://nodejs.org/en/) - The backend
