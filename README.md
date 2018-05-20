@@ -34,6 +34,7 @@ https://alexever17.herokuapp.com/api/novels/ranking/3 <br>
 You can get a query containing only the novels with this specific Ranking <br>
 possible input after ranking/ is 1 to 10 <br>
 <br>
+### Dropped Novels
 https://alexever17.herokuapp.com/api/novels/dropped <br>
 You can also just query the novels which were dropped <br>
 <br>
