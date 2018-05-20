@@ -56,14 +56,12 @@ router.get('/novels/ranking/:rank', cors(), function (req, res, next) {
 });
 
 //getting a collection of novels which were dropped
-router.get('/novels/ranking/dropped', cors(), function (req, res, next) {
-    const myRank = { dropped: false }
-
+router.get('/novels/dropped', cors(), function (req, res, next) {
     //sorting function taking in the query from user
     var mySort = sorting(req.query.sort);
 
     //finding only the corresponding novels which were dropped
-    Novel.find(myRank).sort(mySort).then(function (novels) {
+    Novel.find({ dropped: true }).sort(mySort).then(function (novels) {
         res.send(novels);
     });
 });
