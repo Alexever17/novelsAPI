@@ -29,6 +29,15 @@ const NovelSchema = new Schema({
         type: String,
         required: [false, "Description is required"],
         default: "Description will be added soon."
+    },
+    dropped: {
+        type: Boolean,
+        required: [true, "Specify if this novel was dropped witha boolean"],
+    },
+    dataAdded: {
+        type: String,
+        required: [false, "Date is required"],
+        default: "Unknown"
     }
 });
 

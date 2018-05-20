@@ -49,9 +49,22 @@ router.get('/novels/ranking/:rank', cors(), function (req, res, next) {
     //sorting function taking in the query from user
     var mySort = sorting(req.query.sort);
 
-    //finding only the corresponding novels with following rankings: 1 to 5
+    //finding only the corresponding novels with following rankings: 1 to 10
     Novel.find(myRank).sort(mySort).then(function(novels){
             res.send(novels);
+    });
+});
+
+//getting a collection of novels which were dropped
+router.get('/novels/ranking/dropped', cors(), function (req, res, next) {
+    const myRank = { dropped: false }
+
+    //sorting function taking in the query from user
+    var mySort = sorting(req.query.sort);
+
+    //finding only the corresponding novels which were dropped
+    Novel.find(myRank).sort(mySort).then(function (novels) {
+        res.send(novels);
     });
 });
 

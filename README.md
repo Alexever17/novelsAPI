@@ -32,7 +32,10 @@ finding only novels with korean origin <br>
 ### Ranking
 https://alexever17.herokuapp.com/api/novels/ranking/3 <br>
 You can get a query containing only the novels with this specific Ranking <br>
-possible input after ranking/ is 1 to 5 <br>
+possible input after ranking/ is 1 to 10 <br>
+<br>
+https://alexever17.herokuapp.com/api/novels/ranking/dropped <br>
+You can also just query the novels which were dropped <br>
 <br>
 ### Sorting
 Sorting can be aplied to every get request except for the one where you retrieve a single novel<br>
@@ -40,9 +43,9 @@ just change the link before the ?<br>
 <br>
 examples:<br>
 https://alexever17.herokuapp.com/api/novels?sort=1 <br>
-Sort all novels by the ranking --> 5 to 1 <br>
+Sort all novels by the ranking --> 10 to 1 <br>
 https://alexever17.herokuapp.com/api/novels?sort=2 <br>
-Sort all novels by the ranking --> 1 to 5 <br>
+Sort all novels by the ranking --> 1 to 10 <br>
 https://alexever17.herokuapp.com/api/novels?sort=3 <br>
 Sorting alphabetically <br>
 https://alexever17.herokuapp.com/api/novels?sort=4 <br>
@@ -64,6 +67,8 @@ an example:<br>
     "ranking" : 2,<br>
     "url" : "https://www.novelupdates.com/series/i-shall-seal-the-heavens/",<br>
     "picSource" : "https://cdn.novelupdates.com/images/2015/06/15_ISSTH.jpg",<br>
+    "dropped" : false,<br>
+    "dataAdded" : "28.05.2018",<br>
     "__v" : 0<br>
 }<br>
 <br>
