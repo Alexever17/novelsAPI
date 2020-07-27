@@ -1,10 +1,9 @@
 # Alexever17's Novel Ratings API
 This is the API to get all the data for the novel webpage <br>
-https://github.com/Alexever17/novels
 
-## Getting Started
+## DISCONTINUED
 
-Here is the live Website: https://alexever17.github.io/novels/
+Because of some issues this project isnt longer live.
 
 ### Installing
 
